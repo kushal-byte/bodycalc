@@ -190,14 +190,40 @@
                     },
                     options: {
                         responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                max: 40
-                            }
+                        scales:  {
+                    x: {
+                        ticks: {
+                            color: 'white' // X-axis labels color
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        max: 40,
+                        ticks: {
+                            color: 'white' // Y-axis labels color
                         }
                     }
-                }); }
+                },
+                layout: {
+                     // Black background for chart area
+                     padding: 10
+            }
+        },
+        plugins: [
+            {
+                id: 'backgroundColor',
+                beforeDraw: (chart) => {
+                    const ctx = chart.ctx;
+                    ctx.save();
+                    ctx.fillStyle = 'black'; // Set the background color
+                    ctx.fillRect(0, 0, chart.width, chart.height);
+                    ctx.restore();
+                }
+            }
+        ]
+    });
+}
+    
         </script>
         <span id="hi"><p>you can caluculate your intake through apps like
             <br> "MYFITNESSPAL" "HEALTHIFYME " so on </p></span>s   
