@@ -12,6 +12,7 @@
         width="300"></div>
  <body>  
     <body>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <span id="ww"> <h1>REQUIRED CONSUMPTION OF CALORIES </h1>
           <p><strong>For maintainance :</strong> <span id="x-value"></span></p>
             <p><strong>For gaining muscle:</strong> <span id="y-value"></span></p>
@@ -64,7 +65,10 @@
             </span>
         </div>
         
-    
+           <div>
+            <canvas id="fatPercentageChart" ></canvas>
+       </div>
+
         <script>
             function calculate() {
                 const weight = parseFloat(document.getElementById('weight').value);
