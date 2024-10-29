@@ -64,7 +64,9 @@
                     <p><strong>BMR:</strong> <span id="r-value"></span></p>
                 </span>
             </div>
-            
+               <div>
+            <canvas id="fatPercentageChart" ></canvas>
+       </div>
         
             <script>
              function calculate() {
@@ -135,7 +137,7 @@
 
                 new Chart(ctx, {
                     
-                    type: 'line',
+                    type: 'bar',
                     data: {
                         labels: [" 1"],
                         datasets: [
